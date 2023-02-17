@@ -3,14 +3,15 @@ class Soldier {
     constructor(health, strength) {
         this.health = health;
         this.strength = strength;
+        // this.damage = damage;
     }
 
     attack () {
         return this.strength
     }
 
-    recieveDamage (damage) {
-        this.health -= damage;
+    receiveDamage (damage) {
+       this.health -= damage
     }
 }
 
@@ -47,10 +48,12 @@ class Saxon extends Soldier {
 
 // War
 class War {
-    constructor(vikingArmy, saxonArmy) {
-        this.vikingArmy = vikingArmy;
-        this.saxonArmy = saxonArmy;
-    }
+    // constructor() {
+    //     this.vikingArmy = vikingArmy;
+    //     this.saxonArmy = saxonArmy;
+    // }
+    vikingArmy = [];
+    saxonArmy = [];
 
     addViking (Viking) {
         this.vikingArmy.push(Viking);
@@ -62,5 +65,17 @@ class War {
 
     vikingAttack () {
         
+    }
+
+    saxonAttack () {
+
+    }
+
+    showStatus () {
+        if (this.saxonArmy.length === 0) {
+            return "Vikings have won the war of the century!";
+        } else if (this.vikingArmy.length === 0) {
+            return "Saxons have fought for their lives and survived another day..."
+        } else return "Vikings and Saxons are still in the thick of battle."
     }
 }
